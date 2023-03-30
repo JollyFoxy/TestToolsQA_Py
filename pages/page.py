@@ -19,5 +19,9 @@ class StepsTest1(BasePage):
         input_full_name = self.driver.find_element(By.XPATH, "//input[@id='userName']")
         input_full_name.click()
         input_full_name.send_keys(name)
+
+    @allure.step("нажатие на кнопку")
+    def step_click_submit(self):
         button_submit = Button(xpath="//button[@id='submit']", driver=self.driver)
+        print(button_submit.is_visible())
         button_submit.click_button()
