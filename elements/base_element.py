@@ -10,7 +10,7 @@ class BaseElement:
         self._element = driver.find_element(By.XPATH, xpath)
         self.__actions = ActionChains(self.__driver)
 
-    def get_text(self) -> string:
+    def get_text(self) -> str:
         value = self._element.text()
         return value
 
