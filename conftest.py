@@ -25,6 +25,6 @@ def config_option():
 @pytest.fixture()
 def get_driver(config_option):
     _driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=config_option)
-    _driver.implicitly_wait(20)
+    _driver.implicitly_wait(6)
     yield _driver
     _driver.quit()
