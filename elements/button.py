@@ -10,8 +10,7 @@ class Button(BaseElement):
         self._element.click()
 
     def right_click_button(self):
-        self.__actions.context_click(self._element).perform()
-        self.__actions.context_click(self._element).perform()
+        self._actions.context_click(self._element).perform()
 
     def double_click_button(self):
-        self.__actions.double_click(self._element).perform()
+        self._actions.double_click(self._element).perform()

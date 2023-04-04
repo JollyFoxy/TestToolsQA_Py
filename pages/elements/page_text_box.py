@@ -10,7 +10,6 @@ class PageTextBox(BasePage):
 
     @allure.step("Пеоеход на страницу")
     def step_transition(self):
-        self._go_to_site()
         self._all_transition("Elements", "Text Box")
 
     @allure.step("Ввод имени")
