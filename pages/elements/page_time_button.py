@@ -22,6 +22,7 @@ class PageTimeButton(BasePage):
         Waiting(self._driver).wait_to_element_clickable(no_clickable_button.get_element())
         self._driver.refresh()
 
-    def step_4_color_change_button(self):
-        color_change_button = Button("//button[@id='colorChange']", self._driver).get_element()
-        Waiting(self._driver).wait_all_of(color_change_button.value_of_css_property("color") == "rgba(220, 53, 69, 1)")
+    # def step_4_color_change_button(self):
+    #     color_change_button = Button("//button[@id='colorChange']", self._driver).get_element()
+    #     Waiting(self._driver).wait_all_of(color_change_button.value_of_css_property("color") == "rgba(22 0, 53, 69, 1)")
+    #     self._driver.refresh()

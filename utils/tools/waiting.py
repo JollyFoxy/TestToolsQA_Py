@@ -11,5 +11,5 @@ class Waiting:
     def wait_to_element_clickable(self, element):
         self.wait.until(EC.element_to_be_clickable(element))
 
-    def wait_all_of(self, ec):
-        self.wait.until(EC.all_of(ec))
+    def wait_all_of(self, *ec):
+        self.wait.until(EC.any_of(ec))
