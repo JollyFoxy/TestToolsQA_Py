@@ -1,8 +1,8 @@
 import allure
 
-from elements.button import Button
-from elements.input import Input
-from elements.text_area import TextArea
+from utils.elements.button import Button
+from utils.elements.input import Input
+from utils.elements.text_area import TextArea
 from pages.page_base import BasePage
 
 

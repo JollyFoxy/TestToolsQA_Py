@@ -1,7 +1,7 @@
 import allure
 
-from elements.button import Button
-from elements.input import Input
+from utils.elements.button import Button
+from utils.elements.input import Input
 from pages.page_base import BasePage
 
 

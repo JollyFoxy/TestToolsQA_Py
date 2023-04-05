@@ -1,6 +1,6 @@
 from selenium.webdriver import Keys
 
-from elements.base_element import BaseElement
+from utils.elements.base_element import BaseElement
 
 
 class Input(BaseElement):
