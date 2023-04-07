@@ -18,3 +18,9 @@ class Input(BaseElement):
 
     def press_back_space_input(self):
         self._element.send_keys(Keys.BACK_SPACE)
+
+    def clear_input(self):
+        self._element.clear()
+
+    def press_arrow_left_input(self):
+        self._element.send_keys(Keys.ARROW_LEFT)
