@@ -25,12 +25,12 @@ class PageTextBox(BasePage):
     @allure.step("Ввод адреса")
     def step_4_input_current_address(self, address):
         textarea_current_address = TextArea(xpath="//textarea[@id='currentAddress']", driver=self._driver)
-        textarea_current_address.val_input(address)
+        textarea_current_address.val_text_area(address)
 
     @allure.step("Ввод постоянго адреса")
     def step_5_input_permanent_address(self, address):
         textarea_permanent_address = TextArea(xpath="//textarea[@id='permanentAddress']", driver=self._driver)
-        textarea_permanent_address.val_input(address)
+        textarea_permanent_address.val_text_area(address)
 
     @allure.step("нажатие на кнопку")
     def step_6_click_submit(self):

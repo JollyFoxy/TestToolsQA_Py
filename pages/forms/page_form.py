@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 from pages.page_base import BasePage
 from utils.elements.input import Input
+from utils.elements.text_area import TextArea
 
 
 class PageForms(BasePage):
@@ -42,7 +43,7 @@ class PageForms(BasePage):
 
     @allure.step("")
     # Костыль момент т.к. на этом моменте ежели отчистьть всё поле сайт ляжет...
-    # Знаю так делать не стоит но продолжать надо...
+    # Знаю так делать не стоит, но продолжать надо...
     def step_7_date_of_birth(self, date):
         date_of_birth = Input("//input[@id='dateOfBirthInput']", self._driver)
         for i in range(10):
@@ -53,6 +54,7 @@ class PageForms(BasePage):
                     date_of_birth.press_arrow_left_input()
                 date_of_birth.press_back_space_input()
         date_of_birth.press_enter_input()
+
     @allure.step("")
     def step_8_input_hobbies(self, arg="", arg1="", arg2=""):
         if arg != "":
@@ -62,4 +64,10 @@ class PageForms(BasePage):
         if arg2 != "":
             self._driver.find_element(By.XPATH, f"//label[.='{arg2}']").click()
 
+    def step_9_avatar(self):
+        pass
+
+    def step_10_current_address_input(self, address):
+        current_address = TextArea("//textarea[@id='currentAddress']", self._driver)
+        current_address.val_text_area(address)
 
