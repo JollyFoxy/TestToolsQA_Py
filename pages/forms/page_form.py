@@ -2,8 +2,10 @@ import allure
 from selenium.webdriver.common.by import By
 
 from pages.page_base import BasePage
+from utils.elements.button import Button
 from utils.elements.input import Input
 from utils.elements.text_area import TextArea
+from utils.tools.scroling import Scrolling
 
 
 class PageForms(BasePage):
@@ -64,10 +66,24 @@ class PageForms(BasePage):
         if arg2 != "":
             self._driver.find_element(By.XPATH, f"//label[.='{arg2}']").click()
 
+    @allure.step("")
     def step_9_avatar(self):
         pass
 
+    @allure.step("")
     def step_10_current_address_input(self, address):
         current_address = TextArea("//textarea[@id='currentAddress']", self._driver)
         current_address.val_text_area(address)
 
+    @allure.step("нажатие на кнопку")
+    def step_11_click_submit(self):
+        self._driver.find_element(By.XPATH, "//div[.='Widgets']").click()
+        Scrolling(self._driver).scroll_to(y=500)
+        button_submit = Button(xpath="//button[@id='submit']", driver=self._driver)
+        print(button_submit.is_visible())
+        button_submit.click_button()
+
+    @allure.step("")
+    def step_12_click_close(self):
+        button_close = Button("//button[@id='closeLargeModal']", self._driver)
+        button_close.click_button()
