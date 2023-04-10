@@ -77,8 +77,9 @@ class PageForms(BasePage):
 
     @allure.step("Нажатие на кнопку")
     def step_11_click_submit(self):
-        # self._driver.find_element(By.XPATH, "//div[.='Widgets']").click()
-        # Scrolling(self._driver).scroll_to(y=500)
+        widgets = self._driver.find_element(By.XPATH, "//div[.='Widgets']")
+        widgets.click()
+        Scrolling(self._driver).scroll_to(y=1000)
         button_submit = Button("//button[@id='submit']", driver=self._driver)
         button_submit.click_button()
 

@@ -9,4 +9,4 @@ def test_button(get_driver):
     _steps.step_1_transition()
     _steps.step_2_dinamic_click_button()
     _steps.step_3_right_click_button()
-    _steps.step_double_click_button()
+    _steps.step_4_double_click_button()
