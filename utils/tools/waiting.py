@@ -1,9 +1,10 @@
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Waiting:
-    def __init__(self, driver, wait_time=6):
+    def __init__(self, driver: WebDriver, wait_time=6):
         self._driver = driver
         self._wait_time = wait_time
         self.wait = WebDriverWait(self._driver, self._wait_time)

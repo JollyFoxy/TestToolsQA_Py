@@ -1,10 +1,11 @@
 from selenium.webdriver import Keys
+from selenium.webdriver.chrome.webdriver import WebDriver
 
 from utils.elements.base_element import BaseElement
 
 
 class Input(BaseElement):
-    def __init__(self, xpath, driver):
+    def __init__(self, xpath: str, driver: WebDriver):
         super().__init__(xpath, driver)
 
     def click_to_input(self):

@@ -1,11 +1,12 @@
 import string
 
 from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
 
 class BaseElement:
-    def __init__(self, xpath, driver):
+    def __init__(self, xpath: str, driver: WebDriver):
         self._driver = driver
         self._element = driver.find_element(By.XPATH, xpath)
         self._actions = ActionChains(self._driver)
