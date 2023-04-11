@@ -11,8 +11,7 @@ from pages.widgets.page_data_picker import PageDatePicker
                                            ("15/03/2012/16:20", "November 23, 2009 4:20 PM"),
                                            ("afafaaffaafafaffafaafaf", ""),
                                            ("???????????????????????????????????????????????", "")])
-def test_data_picker(get_driver, date_time, ec):
+def test_data_picker(get_driver, date_time: str, ec: str):
     _steps = PageDatePicker(get_driver)
     _steps.step_1_transition()
-    _steps.step_2_input_date_and_time(date_time)
-    _steps.step_3_check_input(ec)
+    _steps.step_2_input_date_and_time(date_time, ec)

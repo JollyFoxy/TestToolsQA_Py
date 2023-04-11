@@ -1,3 +1,5 @@
+import time
+
 import allure
 from selenium.webdriver.common.by import By
 
@@ -79,6 +81,7 @@ class PageForms(BasePage):
     def step_11_click_submit(self):
         widgets = self._driver.find_element(By.XPATH, "//div[.='Widgets']")
         widgets.click()
+        time.sleep(0.05)
         Scrolling(self._driver).scroll_to(y=1000)
         button_submit = Button("//button[@id='submit']", driver=self._driver)
         button_submit.click_button()
