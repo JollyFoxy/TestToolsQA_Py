@@ -70,19 +70,23 @@ class PageForms(BasePage):
 
     @allure.step("Загрузка аватара ")
     def step_9_avatar(self, file_path):
-        avatar_input = Input("//input[@id='uploadPicture']", self._driver)
-        avatar_input.val_input(file_path)
+        # avatar_input = Input("//input[@id='uploadPicture']", self._driver)
+        # avatar_input.val_input(file_path)
+        pass
     @allure.step("Ввод адреса")
     def step_10_current_address_input(self, address):
         current_address = TextArea("//textarea[@id='currentAddress']", self._driver)
         current_address.val_text_area(address)
 
-    @allure.step("Нажатие на кнопку")
-    def step_11_click_submit(self):
+    def scroll(self):
         widgets = self._driver.find_element(By.XPATH, "//div[.='Widgets']")
         widgets.click()
         time.sleep(0.05)
         Scrolling(self._driver).scroll_to(y=1000)
+
+    @allure.step("Нажатие на кнопку")
+    def step_11_click_submit(self):
+        self.scroll()
         button_submit = Button("//button[@id='submit']", driver=self._driver)
         button_submit.click_button()
 
