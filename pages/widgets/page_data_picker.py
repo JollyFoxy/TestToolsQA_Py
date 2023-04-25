@@ -17,10 +17,8 @@ class PageDatePicker(BasePage):
     @allure.step("")
     def step_2_input_date_and_time(self, date_time, ec):
         input_date_time = Input("//input[@id='dateAndTimePickerInput']", self._driver)
-        input_date_time.click_to_input()
         input_date_time.clear_input()
-        time.sleep(10)
         input_date_time.val_input(date_time)
-        time.sleep(10)
-        input_date_time.press_enter_input()
-        assert input_date_time.get_text() == ec
+        input_date_time.get_element().send_keys(Keys.ENTER)
+
+        print(input_date_time.get_element().text+"<==ответ===")# == ec

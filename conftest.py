@@ -5,10 +5,10 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-@pytest.fixture(scope="session")
-def config_option():
+@pytest.fixture()
+def get_driver():
     _options = webdriver.ChromeOptions()
-    # _options.add_argument("--headless")
+    _options.add_argument("--headless")
     _options.add_argument("--no-sandbox")
     _options.add_argument("--disable-extensions")
     _options.add_argument("--start-maximized")
@@ -19,12 +19,8 @@ def config_option():
 
     prefs = {"download.default_directory": os.path.abspath("data")}
     _options.add_experimental_option("prefs", prefs)
-    return _options
 
-
-@pytest.fixture()
-def get_driver(config_option):
-    _driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=config_option)
+    _driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=_options)
 
     _driver.implicitly_wait(6)
     _driver.get("https://demoqa.com/")
