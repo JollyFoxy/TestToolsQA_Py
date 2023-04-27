@@ -1,11 +1,9 @@
-import time
-
 import allure
 
 from pages.forms.page_form import PageForms
 
 
-@allure.title("")
+@allure.title("Тестирование автоматического заполнения формы")
 def test_forms(get_driver):
     _steps = PageForms(get_driver)
     _steps.step_1_transition()

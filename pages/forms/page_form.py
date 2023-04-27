@@ -70,8 +70,8 @@ class PageForms(BasePage):
 
     @allure.step("Загрузка аватара ")
     def step_9_avatar(self, file_path):
-        # avatar_input = Input("//input[@id='uploadPicture']", self._driver)
-        # avatar_input.val_input(file_path)
+        avatar_input = Input("//input[@id='uploadPicture']", self._driver)
+        avatar_input.val_input(file_path)
         pass
     @allure.step("Ввод адреса")
     def step_10_current_address_input(self, address):

@@ -1,6 +1,9 @@
+import allure
+
 from pages.widgets.page_menu import PageMenu
 
 
+@allure.title("Тест навидения на элименты меню")
 def test_menu(get_driver):
     _steps = PageMenu(get_driver)
     _steps.step_1_transition()

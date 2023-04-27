@@ -3,7 +3,7 @@ import allure
 from pages.elements.page_web_tables import PageWebTables
 
 
-@allure.title("")
+@allure.title("Тест заполнения таблицы")
 def test_web_tables(get_driver):
     _steps = PageWebTables(get_driver)
     _steps.step_1_transition()
