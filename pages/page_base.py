@@ -1,3 +1,5 @@
+import time
+
 import allure
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
@@ -22,3 +24,8 @@ class BasePage:
     def _second_element_transition(self, element):
         menu = self._driver.find_element(By.XPATH, f"//span[.='{element}']")
         menu.click()
+
+    def _captcha_click(self):
+        self._driver.find_element(By.XPATH, "//iframe[starts-with(@name, 'a-') and "
+                                            "starts-with(@src, 'https://www.google.com/recaptcha')]").click()
+

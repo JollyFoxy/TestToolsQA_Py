@@ -1,6 +1,7 @@
 import time
 
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
 
 from pages.page_base import BasePage
 from utils.elements.div import Div
@@ -14,10 +15,10 @@ class PageDroppable(BasePage):
         Scrolling(self._driver).scroll_to(y=600)
         self._second_element_transition("Droppable")
     def step_2_drag_and_drop(self):
-        draggable = Div("//div[@id='draggable']", self._driver)
-        droppable = Div("//div[@id='droppable']", self._driver)
+        draggable = self._driver.find_element(By.XPATH, "//div[@id='draggable']")
+        droppable = self._driver.find_element(By.XPATH, "//div[@id='droppable']")
+        draggable.click()
         ActionChains(self._driver).drag_and_drop(draggable, droppable).perform()
         time.sleep(5)
-        message = P("//div[.='Dropped!']", self._driver)
-        assert message.get_text() == "Dropped!"
+        assert droppable.text == "Dropped!"
 

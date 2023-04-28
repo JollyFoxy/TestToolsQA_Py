@@ -22,7 +22,7 @@ def get_driver():
 
     _driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=_options)
 
-    _driver.implicitly_wait(6)
+    # _driver.implicitly_wait(6)
     _driver.get("https://demoqa.com/")
 
     yield _driver
