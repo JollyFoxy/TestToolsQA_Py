@@ -15,10 +15,11 @@ class PageDatePicker(BasePage):
         self._all_transition("Widgets", "Date Picker")
 
     @allure.step("")
-    def step_2_input_date_and_time(self, date_time, ec):
+    def step_2_input_date_and_time(self, date_time: str, ec: str):
         input_date_time = Input("//input[@id='dateAndTimePickerInput']", self._driver)
+
         input_date_time.clear_input()
         input_date_time.val_input(date_time)
-        input_date_time.get_element().send_keys(Keys.ENTER)
+        input_date_time.press_enter_input()
 
-        print(input_date_time.get_element().text+"<==ответ===")# == ec
+        assert input_date_time.get_value() == ec

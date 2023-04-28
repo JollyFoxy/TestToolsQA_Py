@@ -14,4 +14,3 @@ from pages.widgets.page_data_picker import PageDatePicker
 def test_data_picker(get_driver, date_time: str, ec: str):
     _steps = PageDatePicker(get_driver)
     _steps.step_1_transition()
-    _steps.step_2_input_date_and_time(date_time, ec)

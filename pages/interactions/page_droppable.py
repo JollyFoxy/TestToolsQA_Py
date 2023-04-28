@@ -19,6 +19,5 @@ class PageDroppable(BasePage):
         droppable = self._driver.find_element(By.XPATH, "//div[@id='droppable']")
         draggable.click()
         ActionChains(self._driver).drag_and_drop(draggable, droppable).perform()
-        time.sleep(5)
         assert droppable.text == "Dropped!"
 
