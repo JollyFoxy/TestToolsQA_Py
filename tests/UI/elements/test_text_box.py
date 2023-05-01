@@ -3,6 +3,9 @@ import allure
 from pages.elements.page_text_box import PageTextBox
 
 
+@allure.epic("Ui tests")
+@allure.feature("Elements")
+@allure.link(name="Text Box", url="https://demoqa.com/text-box")
 @allure.title("Ввод текста в поле")
 def test_text_box(get_driver):
     _steps = PageTextBox(get_driver)

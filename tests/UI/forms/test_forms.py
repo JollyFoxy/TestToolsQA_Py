@@ -3,6 +3,9 @@ import allure
 from pages.forms.page_form import PageForms
 
 
+@allure.epic("Ui tests")
+@allure.feature("Forms")
+@allure.link(name="Practice Form", url="https://demoqa.com/automation-practice-form")
 @allure.title("Тестирование автоматического заполнения формы")
 def test_forms(get_driver):
     _steps = PageForms(get_driver)

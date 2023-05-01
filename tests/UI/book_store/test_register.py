@@ -3,7 +3,10 @@ import allure
 from pages.book_store.page_register import PageRegister
 
 
-@allure.title("")
+@allure.epic("Ui tests")
+@allure.feature("BookStoreApplication")
+@allure.link(name="Book Store Application", url="https://demoqa.com/register")
+@allure.title("Тест регистрации")
 def test_register(get_driver):
     _steps = PageRegister(get_driver)
     _steps.step_1_transition()

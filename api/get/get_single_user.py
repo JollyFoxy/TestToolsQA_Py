@@ -19,6 +19,6 @@ class StepsGetSingleUser:
                 }
         }
         response = requests.get("https://reqres.in/api/users/2")
-        assert response.status_code == 200
-        assert response.json().get('first_name') == 'Janet'
 
+        assert response.status_code == 200
+        assert response.json() == body

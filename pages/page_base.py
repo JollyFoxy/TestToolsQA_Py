@@ -28,4 +28,3 @@ class BasePage:
     def _captcha_click(self):
         self._driver.find_element(By.XPATH, "//iframe[starts-with(@name, 'a-') and "
                                             "starts-with(@src, 'https://www.google.com/recaptcha')]").click()
-
