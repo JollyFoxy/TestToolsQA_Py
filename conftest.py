@@ -16,6 +16,7 @@ def get_driver():
     _options.add_argument("--start-maximized")
     _options.add_argument("--window-size=1920,1080")
     _options.add_argument("--disable-dev-shm-usage")
+    _options.add_argument("--lang=ru")
 
     _options.page_load_strategy = "normal"
 

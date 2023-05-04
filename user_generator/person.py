@@ -18,6 +18,9 @@ class Person:
         self.__department = UG.gen_department()
         self.__current_address = UG.gen_address()
         self.__permanent_address = UG.gen_address()
+        self.__date_of_birth = UG.gen_date_birth()
+        self.__hobbies = UG.gen_hobbies()
+        self.__gender = UG.gen_gender()
 
     @property
     def name(self) -> str:
@@ -61,8 +64,20 @@ class Person:
         return self.__age
     @property
     def current_address(self) -> str:
-        return self.__current_address\
+        return self.__current_address
 
     @property
     def permanent_address(self) -> str:
         return self.__permanent_address
+
+    @property
+    def date_of_birth(self) -> str:
+        return self.__date_of_birth\
+
+    @property
+    def hobbies(self) -> str:
+        return self.__hobbies
+
+    @property
+    def gender(self) -> str:
+        return self.__gender

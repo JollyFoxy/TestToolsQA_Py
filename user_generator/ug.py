@@ -1,6 +1,9 @@
 import uuid
-from random import random
+from datetime import datetime
+from random import random, randint
 from uuid import UUID
+
+from user_generator.person import Person
 
 
 class UG:
@@ -75,3 +78,29 @@ class UG:
         department = ["education", "medicine", "jurisprudence", "it", "sales", ""]
         i = int(random() * len(department))
         return department[i]
+
+    @staticmethod
+    def gen_date_birth() -> str:
+        person = Person()
+        y = (int(datetime.now().year) - int(person.age)).__str__()
+        m = int(randint(datetime.now().month, 12)).__str__()
+        d = 0
+        if m == 1 or 3 or 5 or 7 or 8 or 10 or 12:
+            d = int(randint(1, 31)).__str__()
+        elif m == 4 or 6 or 9 or 11:
+            d = int(randint(1, 30)).__str__()
+        elif m == 2:
+            d = int(randint(1, 28)).__str__()
+        return m + "." + d + "." + y
+
+    @staticmethod
+    def gen_hobbies() -> str:
+        hobbies = ["Reading", "Reading", "Music"]
+        i = int(random() * len(hobbies))
+        return hobbies[i]
+
+    @staticmethod
+    def gen_gender() -> str:
+        gender = ["Male", "Female"]
+        i = int(random() * len(gender))
+        return gender[i]
