@@ -1,7 +1,7 @@
 import allure
 
 from pages.elements.page_web_tables import PageWebTables
-from user_generator.person import Person
+from user_generator.user import Person
 
 
 @allure.epic("Ui tests")

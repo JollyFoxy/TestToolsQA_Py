@@ -1,7 +1,7 @@
 import allure
 
 from pages.elements.page_text_box import PageTextBox
-from user_generator.person import Person
+from user_generator.user import Person
 
 
 @allure.epic("Ui tests")

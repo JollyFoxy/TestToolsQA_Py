@@ -18,7 +18,7 @@ class Person:
         self.__department = UG.gen_department()
         self.__current_address = UG.gen_address()
         self.__permanent_address = UG.gen_address()
-        self.__date_of_birth = UG.gen_date_birth()
+        self.__date_of_birth = UG.gen_date_birth(self.__age)
         self.__hobbies = UG.gen_hobbies()
         self.__gender = UG.gen_gender()
 

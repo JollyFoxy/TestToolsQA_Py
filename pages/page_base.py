@@ -10,7 +10,7 @@ class BasePage:
     def __init__(self, driver: WebDriver):
         self._driver = driver
 
-    def _all_transition(self, first_element, second_element):
+    def _all_transition(self, first_element: str, second_element: str):
         menu_1 = self._driver.find_element(By.XPATH, f"//h5[.='{first_element}']")
         menu_1.click()
 

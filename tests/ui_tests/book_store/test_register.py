@@ -1,7 +1,7 @@
 import allure
 
 from pages.book_store.page_register import PageRegister
-from user_generator.person import Person
+from user_generator.user import Person
 
 
 @allure.epic("Ui tests")

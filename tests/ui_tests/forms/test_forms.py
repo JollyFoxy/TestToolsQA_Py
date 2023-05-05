@@ -1,7 +1,9 @@
+import os.path
+
 import allure
 
 from pages.forms.page_form import PageForms
-from user_generator.person import Person
+from user_generator.user import Person
 
 
 @allure.epic("Ui tests")

@@ -25,3 +25,4 @@ class Input(BaseElement):
 
     def press_arrow_left_input(self):
         self._element.send_keys(Keys.ARROW_LEFT)
+
