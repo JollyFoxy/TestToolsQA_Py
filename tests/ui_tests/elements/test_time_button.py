@@ -12,3 +12,4 @@ def test_time_button(get_driver):
     _steps.transition()
     _steps.timeout_button()
     _steps.enable_button()
+    _steps.color_change_button()

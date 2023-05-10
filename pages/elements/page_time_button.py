@@ -1,9 +1,11 @@
 import allure
+from selenium.webdriver.common.by import By
 
 from pages.page_base import BasePage
 from utils.elements.button import Button
 from utils.tools.scroling import Scrolling
 from utils.tools.waiting import Waiting
+from selenium.webdriver.support.color import Color
 
 
 class PageTimeButton(BasePage):
@@ -26,7 +28,9 @@ class PageTimeButton(BasePage):
         Waiting(self._driver).wait_to_element_clickable(no_clickable_button.get_element())
         self._driver.refresh()
 
-    # def color_change_button(self):
-    #     color_change_button = Button("//button[@id='colorChange']", self._driver).get_element()
-    #     Waiting(self._driver).wait_all_of(color_change_button.value_of_css_property("color") == "rgba(22 0, 53, 69, 1)")
-    #     self._driver.refresh()
+    @allure.step("Ожидание изменения цвета")
+    def color_change_button(self):
+        color_change_button = Color.from_string(self._driver.find_element(By.ID, "colorChange")
+                                                    .value_of_css_property('color'))
+        assert color_change_button.rgba == "rgba(220, 53, 69, 1)"
+        self._driver.refresh()
