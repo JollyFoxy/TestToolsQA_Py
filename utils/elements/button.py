@@ -4,7 +4,9 @@ from utils.elements.base_element import BaseElement
 
 
 class Button(BaseElement):
-    def __init__(self, xpath: str, driver: WebDriver):
+    def __init__(self, xpath: str = None, id: str = None, driver: WebDriver = None):
+        if xpath is None:
+            xpath = f"//button[@id='{id}']"
         super().__init__(xpath, driver)
 
     def click_button(self):

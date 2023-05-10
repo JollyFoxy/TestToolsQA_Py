@@ -11,12 +11,12 @@ from utils.elements.input import Input
 class PageDatePicker(BasePage):
 
     @allure.step("")
-    def step_1_transition(self):
+    def transition(self):
         self._all_transition("Widgets", "Date Picker")
 
     @allure.step("")
-    def step_2_input_date_and_time(self, date_time: str, ec: str):
-        input_date_time = Input("//input[@id='dateAndTimePickerInput']", self._driver)
+    def input_date_and_time(self, date_time: str, ec: str):
+        input_date_time = Input("dateAndTimePickerInput", self._driver)
 
         input_date_time.clear_input()
         input_date_time.val_input(date_time)
