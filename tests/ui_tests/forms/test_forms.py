@@ -1,5 +1,3 @@
-import os.path
-
 import allure
 
 from pages.forms.page_form import PageForms
@@ -21,7 +19,7 @@ def test_forms(get_driver):
     _steps.input_phone(_user.nuber)
     _steps.date_of_birth(_user.date_of_birth)
     _steps.input_hobbies(_user.hobbies)
-    _steps.avatar("/home/pavel/PycharmProjects/TestToolsQA_Py/img/foxy.png")
+    _steps.avatar()
     _steps.current_address_input(_user.current_address)
     _steps.click_submit()
     _steps.click_close()

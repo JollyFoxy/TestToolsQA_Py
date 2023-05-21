@@ -69,10 +69,10 @@ class PageForms(BasePage):
             self._driver.find_element(By.XPATH, f"//label[.='{arg2}']").click()
 
     @allure.step("Загрузка аватара ")
-    def avatar(self, file_path):
+    def avatar(self, file_path: str = "/Users/pavel.mizirev/PycharmProjects/TestToolsQA_Py/img/foxy.png"):
         avatar_input = Input("uploadPicture", self._driver)
         avatar_input.val_input(file_path)
-        pass
+
     @allure.step("Ввод адреса")
     def current_address_input(self, address):
         current_address = TextArea("currentAddress", self._driver)
