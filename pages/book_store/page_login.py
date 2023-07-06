@@ -1,5 +1,3 @@
-import time
-
 from pages.page_base import BasePage
 from utils.elements.button import Button
 from utils.tools.scroling import Scrolling

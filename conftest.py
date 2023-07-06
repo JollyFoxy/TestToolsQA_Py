@@ -20,9 +20,6 @@ def get_driver():
 
     _options.page_load_strategy = "normal"
 
-    prefs = {"download.default_directory": os.path.abspath("data")}
-    _options.add_experimental_option("prefs", prefs)
-
     _driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=_options)
 
     _driver.implicitly_wait(6)
